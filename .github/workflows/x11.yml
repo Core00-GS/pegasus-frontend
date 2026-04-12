@@ -6,8 +6,8 @@ env:
   QT_TARGET: x11-static
   QT_VERSION: qt51512
   QT_VERSION_PRETTY: "5.15.12"
-  SDL_TARGET: x11-bionic
-  SDL_VERSION: "2.0.20"
+  SDL_TARGET: x11-jammy
+  SDL_VERSION: "2.32.10"
 
 
 jobs:
@@ -102,8 +102,8 @@ jobs:
             INSTALL_DESKTOPDIR=/usr/share/applications
             INSTALL_APPSTREAMDIR=/usr/share/metainfo
             INSTALL_DOCDIR=/usr/share/doc/pegasus-frontend
-            SDL_LIBS="-L/opt/SDL2-2.0.20/lib -lSDL2"
-            SDL_INCLUDES=/opt/SDL2-2.0.20/include/SDL2
+            SDL_LIBS="-L/opt/SDL2-2.32.10/lib -lSDL2"
+            SDL_INCLUDES=/opt/SDL2-2.32.10/include/SDL2
             CONFIG+=ccache
           INSTALL_BINDIR: /usr/bin/
         run: .circleci/build.sh && .circleci/objdump_linux.sh '' && .circleci/zip_linux.sh
